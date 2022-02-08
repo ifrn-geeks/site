@@ -8,6 +8,7 @@ const buildId = randomUUID()
 
 module.exports = {
   reactStrictMode: true,
+  trailingSlash: true,
   env: {
     BUILD_ID: buildId,
     GITHUB_TOKEN: process.env.GITHUB_TOKEN

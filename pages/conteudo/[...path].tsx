@@ -53,17 +53,14 @@ const ContentPage: NextPage<Props> = ({ source, paths, currentPath, toc, firstCl
       <TopBar firstClasse={firstClassePath.name} firstMember={firstMemberPath.name} />
       <div className="flex w-full h-screen pt-12">
         <Sidebar pages={paths} currentPath={router.asPath} />
-        <main className="py-10 w-full overflow-y-auto">
+        <main className="py-10 w-full overflow-y-auto p-5">
           {
             currentPath!.type === "aulas" ?
               <ClassePage source={source} frontMatter={currentPath!.frontMatter} /> :
               <TeamPage source={source} frontMatter={currentPath!.frontMatter} />
           }
         </main>
-        {
-          // @ts-ignore
-          <TableOfContents toc={toc} type={currentPath!.type} />
-        }
+        <TableOfContents toc={toc} type={currentPath!.type} />
       </div>
       {
         isOpen && <div className="fixed w-screen h-screen bg-black opacity-50" onClick={closeSideBar}></div>

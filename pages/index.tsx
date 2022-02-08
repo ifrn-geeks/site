@@ -1,12 +1,14 @@
 import Head from "next/head"
 import type { GetStaticProps, NextPage } from "next"
 import { getPaths, Path } from "../lib/content"
+import { TopBar } from "../components/Topbar"
 
 interface Props {
-  paths: Path[]
+  firstClassePath: Path
+  firstMemberPath: Path
 }
 
-const HomePage: NextPage = () => {
+const HomePage: NextPage<Props> = ({ firstClassePath, firstMemberPath }) => {
   return (
     <>
       <Head>
@@ -18,6 +20,9 @@ const HomePage: NextPage = () => {
         <meta property="og:url" content="" />
         <meta property="og:image" content="" />
       </Head>
+      <div className="flex flex-col h-screen">
+        <TopBar firstClasse={firstClassePath.name} firstMember={firstMemberPath.name} />
+      </div>
     </>
   )
 }
@@ -30,7 +35,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      paths
+      firstClassePath,
+      firstMemberPath
     }
   }
 }
