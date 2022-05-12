@@ -19,13 +19,16 @@ export const Sidebar = ({ pages, currentPath }: Props) => {
       "-translate-x-full": !isOpen
     })}>
       <nav>
-        <p className="text-lg mb-1 font-bold">Aulas</p>
+        <Link href="/">
+          <a className="text-lg mb-1 font-bold">Home</a>
+        </Link>
+        <p className="text-lg mt-2 mb-1 font-bold">Aulas</p>
         <ul>
           {classes.map((page) => {
             return (
               <li key={page.path}>
                   <Link href={page.path}>
-                    <a className={classNames({ "font-medium": currentPath.endsWith(page.path) })}>Aula {page.frontMatter.número}</a>
+                    <a className={classNames({ "font-medium": currentPath.includes(page.path) })}>Aula {page.frontMatter.número}</a>
                   </Link>
                 </li>
               )
