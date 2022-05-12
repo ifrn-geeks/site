@@ -21,5 +21,8 @@ module.exports = {
         permanent: true
       }
     ]
+  },
+  images: {
+    domains: ["geeks.par.ifrn.eu.br"]
   }
 }
