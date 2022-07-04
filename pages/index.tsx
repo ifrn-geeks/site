@@ -25,6 +25,7 @@ const HomePage: NextPage<Props> = ({ paths, firstClassePath, firstMemberPath }) 
         <meta property="og:url" content="" />
         <meta property="og:image" content="" />
       </Head>
+
       <div className="flex flex-col h-screen">
         <TopBar firstClasse={firstClassePath.name} firstMember={firstMemberPath.name} />
         <main className="w-full overflow-y-auto">
