@@ -12,5 +12,11 @@ module.exports = {
   env: {
     BUILD_ID: buildId,
     GITHUB_TOKEN: process.env.GITHUB_TOKEN
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   }
 }
