@@ -19,16 +19,14 @@ export const Sidebar = ({ pages, currentPath }: Props) => {
       "-translate-x-full": !isOpen
     })}>
       <nav>
-        <Link href="/">
-          <a className="text-lg mb-1 font-bold">Home</a>
-        </Link>
+        <Link href="/" className="text-lg mb-1 font-bold">Home</Link>
         <p className="text-lg mt-2 mb-1 font-bold">Aulas</p>
         <ul>
           {classes.map((page) => {
             return (
               <li key={page.path}>
-                  <Link href={page.path}>
-                    <a className={classNames({ "font-medium": currentPath.includes(page.path) })}>Aula {page.frontMatter.número}</a>
+                  <Link href={page.path} className={classNames({ "font-medium": currentPath.includes(page.path) })}>
+                    Aula {page.frontMatter.número}
                   </Link>
                 </li>
               )
@@ -39,8 +37,8 @@ export const Sidebar = ({ pages, currentPath }: Props) => {
           {team.map((page) => {
             return (
               <li key={page.path}>
-                  <Link href={page.path}>
-                    <a className={classNames({ "font-medium": currentPath.endsWith(page.path) })}>{page.frontMatter.nome}</a>
+                  <Link href={page.path} className={classNames({ "font-medium": currentPath.endsWith(page.path) })}>
+                    {page.frontMatter.nome}
                   </Link>
                 </li>
               )

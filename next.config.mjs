@@ -1,12 +1,12 @@
 /** @type {import("next").NextConfig} */
-const randomUUID = require("crypto").randomUUID
-const dotenv = require("dotenv")
+import { randomUUID } from "crypto"
+import dotenv from "dotenv"
 
 dotenv.config()
 
 const buildId = randomUUID()
 
-module.exports = {
+export default {
   reactStrictMode: true,
   trailingSlash: true,
   env: {
@@ -17,6 +17,6 @@ module.exports = {
     ignoreBuildErrors: true,
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true
   }
 }

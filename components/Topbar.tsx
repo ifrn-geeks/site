@@ -20,19 +20,17 @@ export const TopBar = ({ firstClasse, firstMember }: Props) => {
             <FontAwesomeIcon icon={faBars} />
           </button>
         </div>
-        <Link href="/">
-          <a>IFRN GEEKS</a>
-        </Link>
+        <Link href="/">IFRN GEEKS</Link>
         <div className="w-full items-center justify-end hidden md:flex">
           <nav className="flex mr-20">
-            <Link href="/">
-              <a className="mx-2">Home</a>
+            <Link href="/" className="mx-2">
+              Home
             </Link>
-            <Link href={`/conteudo/aulas/${firstClasse}`}>
-              <a className="mx-2">Aulas</a>
+            <Link href={`/conteudo/aulas/${firstClasse}`} className="mx-2">
+              Aulas
             </Link>
-            <Link href={`/conteudo/equipe/${firstMember}`}>
-              <a className="mx-2">Equipe</a>
+            <Link href={`/conteudo/equipe/${firstMember}`} className="mx-2">
+              Equipe
             </Link>
           </nav>
         </div>
